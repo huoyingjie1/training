@@ -1,0 +1,18 @@
+#test1{
+    text-align: center; 
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+.title img {
+    width: 30%;
+}
+
+h5{
+    text-align: center;
+}
+
+
