@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center"> 
+    <img src="{{(door$ | async)?.status === 0?'../../assets/img/门关.jpg':'../../assets/img/门开.jpg'}}" alt=""> 
+  </div> 
+  
+  
+  <p></p>
+  <div class="anniu1">
+    <div> 
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOn()" value="打开"/> 
+    </div>
+  <p></p>
+    <div>
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOff()"  value="关闭"/> 
+    </div>
+  </div>
+  
+  
+

@@ -1,0 +1,136 @@
+<div class="bg06 " style="width: 100%;height: 100%;">
+  <div class="header">
+    <h3>可视化大屏界面</h3>
+  </div>  
+<p></p>
+
+  <div class="card-deck">
+    <div class="card border-primary mb-3">
+      <div class="card-body">
+        <div>
+          <div>
+            <div id="lineChart2"  style="width:400px;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card border-primary mb-3">
+      <div class="card-body ">
+        <div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  灯泡&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src="{{(led$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                  <!-- <img src="../../assets/img/关.png" alt=""> -->
+                </div>
+                <div class="col-sm">
+                  门锁&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src="{{(lock$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+                <div class="col-sm">
+                  空调&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src="{{(air$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+              </div>
+            </div>
+
+          <p></p>
+          <p></p>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  火灾&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src="{{(fire$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+                <div class="col-sm">
+                  电风扇&nbsp;
+                  <img src="{{(fan$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+                <div class="col-sm">
+                  摄像头&nbsp;
+                  <img src="{{(webcam$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+              </div>
+            </div>
+                        
+          <p></p>
+          <p></p>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  加湿器&nbsp;
+                  <img src="{{(humidifier$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+                <div class="col-sm">
+                  报警器&nbsp;
+                  <img src="{{(alarm$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+                <div class="col-sm">
+                  喷水器&nbsp;
+                  <img src="{{(water$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+              </div>
+            </div>
+            <p></p>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  门&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <img src="{{(door$ | async)?.status === 0?'../../assets/img/关.png':'../../assets/img/开.png'}}" alt=""> 
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card border-primary mb-3">
+      <div class="card-body">
+        <div>
+          <div id="lineChart1" style="width: 400px;height:200px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- -------------------第二层------------------- -->
+
+  <div class="card-deck">
+    <div class="card border-primary mb-3">
+      <div class="card-body">
+        <div>
+          <div>
+            <div id="lineChart3"  style="width:400px;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card border-primary mb-3">
+
+      <div class="card-body">
+        <div>
+            <div class="container">
+             
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="card border-primary mb-3">
+      <div class="card-body">
+     
+        <div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

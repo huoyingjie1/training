@@ -1,0 +1,14 @@
+
+<div class="d-flex justify-content-center"> 
+    <img src="{{(fire$ | async)?.status === 0?'../../assets/img/熄灭.jpg':'../../assets/img/着火.jpg'}}" alt=""> 
+  </div> 
+  <p></p>
+  <div class="anniu1">
+    <div> 
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOn()" value="打开"/> 
+    </div>
+  <p></p>
+    <div>
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOff()"  value="关闭"/> 
+    </div>
+  </div>

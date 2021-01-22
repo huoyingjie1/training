@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center"> 
+    <img src="{{(webcam$ | async)?.status === 0?'../../assets/img/摄像头关.jpg':'../../assets/img/摄像头开.jpg'}}" alt=""> 
+  </div> 
+  
+  <div class="anniu1">
+    <div> 
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOn()" value="打开"/> 
+    </div>
+  <p></p>
+    <div>
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOff()"  value="关闭"/> 
+    </div>
+  </div>

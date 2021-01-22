@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center" style="width: 30;height: 30;"> 
+    <img src="{{(alarm$ | async)?.status === 0?'../../assets/img/报警器关.jpg':'../../assets/img/报警器开.jpg'}}" alt=""> 
+  </div> 
+  
+  <p></p>
+  <div class="anniu1">
+    <div> 
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOn()" value="打开"/> 
+    </div>
+  <p></p>
+    <div>
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOff()"  value="关闭"/> 
+    </div>
+  </div>
+  
+  

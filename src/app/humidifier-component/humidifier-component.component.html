@@ -1,0 +1,18 @@
+
+<div class="d-flex justify-content-center"> 
+    <img src="{{(humidifier$ | async)?.status === 0?'../../assets/img/加湿器关.jpg':'../../assets/img/加湿器开.jpg'}}" alt=""> 
+  </div> 
+  
+  
+  <p></p>
+  <div class="anniu1">
+    <div> 
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOn()" value="打开"/> 
+    </div>
+  <p></p>
+    <div>
+      <input type="button" class="btn btn-lg btn-block  btn-info" (click)="turnOff()"  value="关闭"/> 
+    </div>
+  </div>
+  
+  
