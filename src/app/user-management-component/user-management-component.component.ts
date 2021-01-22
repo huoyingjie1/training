@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, AbstractControl, FormBuilder } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { User } from '../login-component/user';
 import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-user-management-component',
@@ -19,7 +20,6 @@ export class UserManagementComponentComponent implements OnInit {
    baseUrl = 'http://192.168.43.177:8080/';
    currentUser:User;
    
-
    constructor(private fb: FormBuilder,private httpClient: HttpClient){
      this.myForm=this.fb.group({
       'id':[''],

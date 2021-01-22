@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { timer } from 'rxjs';
 import { DeviceService } from '../device.service';
 
@@ -7,15 +7,25 @@ import { DeviceService } from '../device.service';
   templateUrl: './fan-component.component.html',
   styleUrls: ['./fan-component.component.css']
 })
-export class FanComponentComponent implements OnInit {
+export class FanComponentComponent implements OnInit, OnDestroy {
 
   fan$ = null;
-
+  interval = null;
   constructor(private deviceService: DeviceService) {
 
   }
   ngOnInit(): void {
-    this.fan$ = this.deviceService.getFan();
+    setInterval(() => {
+      this.fan$ = this.deviceService.getFan();
+    },2000);
+
+  }
+
+  ngOnDestroy() {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
   turnOn() {
     this.deviceService.toggleFan(1).subscribe(
@@ -39,5 +49,5 @@ export class FanComponentComponent implements OnInit {
         );
       }
     );
-    }
   }
+}

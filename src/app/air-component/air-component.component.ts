@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { timer } from 'rxjs';
 import { DeviceService } from '../device.service';
 
@@ -7,14 +7,22 @@ import { DeviceService } from '../device.service';
   templateUrl: './air-component.component.html',
   styleUrls: ['./air-component.component.css']
 })
-export class AirComponentComponent implements OnInit {
+export class AirComponentComponent implements OnInit,OnDestroy {
    air$ = null;
-
+   interval =null;
   constructor(private deviceService: DeviceService) {
 
   }
   ngOnInit(): void {
-    this.air$ = this.deviceService.getAir();
+    this.interval=setInterval(() => {
+          this.air$ = this.deviceService.getAir();
+    },2000);
+  }
+  ngOnDestroy(){
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = null;
+    }
   }
   turnOn() {
     this.deviceService.toggleAir(1).subscribe(
@@ -39,7 +47,5 @@ export class AirComponentComponent implements OnInit {
       }
     );
   }
-
-  
   
 }

@@ -16,21 +16,23 @@ export class ExitComponentComponent implements OnInit {
   myForm: FormGroup;
    name: AbstractControl;
    id: AbstractControl;
+   productkey: AbstractControl;
    type: AbstractControl;
    status: AbstractControl;
    devices$: Observable<Device>;
-   baseUrl = 'http://192.168.43.177:8080/';
+   baseUrl = 'http://192.168.43.177:8000/';
    currentUser:Device;
    
 
    constructor(private fb: FormBuilder,private httpClient: HttpClient){
      this.myForm=this.fb.group({
        'id':[''],
+       'productkey':[''],
        'name':[''],
        'type':[''],
        'status':[''],
      });
-
+     this.productkey = this.myForm.controls['productkey'];
      this.name = this.myForm.controls['name'];
      this.id = this.myForm.controls['id'];
      this.type = this.myForm.controls['type'];
@@ -40,7 +42,6 @@ export class ExitComponentComponent implements OnInit {
    ngOnInit():void{
       this.devices$ = <Observable<Device>>this.httpClient.get(this.baseUrl + 'device');
    }
-
    search(){
       if (this.id.value){
         this.devices$ = <Observable<Device>>this.httpClient.get(this.baseUrl + 'device/' +this.id.value);
@@ -70,7 +71,7 @@ export class ExitComponentComponent implements OnInit {
        alert('必须先选择用户!');
      }
      else{
-       this.httpClient.delete(this.baseUrl + 'device/' + this.currentUser.id).subscribe(
+       this.httpClient.delete(this.baseUrl + 'device/' + this.currentUser.id+'/'+this.currentUser.productkey+'/'+this.currentUser.name).subscribe(
          (val:any) => {
            if(val.succ){
              alert('删除成功！');
@@ -79,7 +80,7 @@ export class ExitComponentComponent implements OnInit {
        )
      }
    }
-
+/*
    update(){
     if(!this.currentUser){
       alert('必须先选择用户!');
@@ -93,5 +94,5 @@ export class ExitComponentComponent implements OnInit {
         }
       )
     }
-  }
+  }*/
   }

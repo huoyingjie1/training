@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs';
 import { User } from './user';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -18,17 +18,17 @@ export class LoginComponentComponent implements OnInit {
   password: AbstractControl;
   baseUrl = 'http://192.168.43.177:8080/';
   users$: Observable<User>;
+  name$: Observable<string>;
 
 
   constructor(private fb: FormBuilder, private httpClient: HttpClient, private authService: AuthService) {
     this.myForm = this.fb.group({
-      'userName': [''],
+      'userName': ['',Validators.compose([Validators.required])],
       'password': [''],
     });
 
     this.userName = this.myForm.controls['userName'];
     this.password = this.myForm.controls['password'];
-
 
   }
 

@@ -1,50 +1,91 @@
- <div>
- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-black border-bottom shadow-sm " >
-   <h5>设备与用户查看系统</h5>
-   <nav class="my-2 my-md-0 mr-md-3">
-   <a class="p-2 text-dark" >
-    <a class="" [routerLink]="['product']">主页</a>
-    &nbsp;&nbsp;&nbsp;
-    <a class="" [routerLink]="['user']">用户</a>
-    &nbsp;&nbsp;&nbsp;
-    <a class="" [routerLink]="['exit']">设备</a>
-  </a>
+<nav class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">冷冻储藏室状态查看</h5>
+  <ul class="nav my-2 my-md-0 mr-md-3 justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['/management/product']">主页</a>
+    </li>&nbsp;
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['display']">总页</a>
+    </li>&nbsp;
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['user']">用户</a>
+    </li>&nbsp;
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['exit']">设备</a>
+    </li>&nbsp;
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['products']">产品</a>
+    </li>&nbsp;
+    <li class="nav-item">
+      <a class="nav-link badge badge-secondary" [routerLink]="['']">退出</a>
+    </li>
+  </ul>
 </nav>
 
-   </div>
   <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
   <!-- <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" (click)="search()">搜索</a>
     </li>
   </ul> -->
-<div class="container-fluid">
+<div class="container-fluid ">
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
+
           <li class="nav-item">
             <a class="nav-link active" [routerLink]="['product']">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               设备主页<span class="sr-only">(current)</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['user']">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
               用户管理
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['exit']">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14" ></line></svg>
               设备管理
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['products']">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14" ></line></svg>
+              产品管理
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['devicestatus']">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14" ></line></svg>
+              设备统计
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['display']">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14" ></line></svg>
+              显示大屏
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['']">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14" ></line></svg>
+              退出
+            </a>
+          </li>
         </ul>
+
       </div>
     </nav>
-      
     <div class="col-md-9 ml-sm-auto col-lg-10 px-4  flex-md-nowrap p-0 shadow div1">
       <router-outlet></router-outlet>
     
